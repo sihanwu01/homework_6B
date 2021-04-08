@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Link to CSS file-->
+  <link rel="stylesheet" media="all" type="text/css" href="styles.css" />
+  <script src="main.js"></script>
+  <title>Shopping Cart</title>
+</head>
+
+<body onload="onLoad()">
+  <!--website container-->
+  <div id="container">
+    <div id="top_row">
+      <header>
+        <a href="index.html">
+          <!--image source: https://flic.kr/p/cKbtiY -->
+          <img src="images/icon.jpg" alt="Bun Bun Bake Shop Logo" class="responsive">
+          <h1>Bun Bun Bake Shop</h1>
+        </a>
+      </header>
+
+      <!--Navigation Bar-->
+      <nav>
+        <a href="index.html" class="select">Home</a>
+        <a href="products.html" class="select">Products</a>
+        <a class="select">About</a>
+        <a class="select">Contact</a>
+        <a id="cart-display" href="cart.html" class="selected">Cart</a>
+      </nav>
+    </div>
+
+    <div id="content">
+      <div id="banner">
+        <div class="center">Shopping Cart</div>
+      </div>
+    </div>
+
+    <div id="cart">
+
+    <div class="column-title">
+      <a style="margin-right: 20%;">Product</a>
+      <a style="margin-right: 15%">Qty</a>
+      <a>Price</a>
+    </div>
+
+    <div class="shopping-cart">
+      <!--item 1-->
+      <div class="item">
+        <div class="cart-image">
+          <!--image source: https://flic.kr/p/aw5Rcs-->
+          <img src="images/image1.jpg" alt="original flavor cinnamon bun" />
+        </div>
+        <div class="description">
+          <span>Original Cinnamon Roll</span>
+          <span>Sugar-milk Glazing</span>
+        </div>
+        <div class="quantity">
+          <button class="minus-btn" type="button" name="button">
+            <img src="images/minus.png" alt="Minus" />
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="add-btn" type="button" name="button">
+            <img src="images/add.png" alt="Add" />
+          </button>
+        </div>
+        <div class="price">$3.67</div>
+        <span class="delete-btn"></span>
+      </div>
+      <!--item 2-->
+      <div class="item">
+        <div class="cart-image">
+          <!--image source: https://flic.kr/p/aw5Rcs-->
+          <img src="images/image2.jpg" alt="pumpkin spice cinnamon roll" />
+        </div>
+        <div class="description">
+          <span>Pumpkin Spice Cinnamon Roll</span>
+          <span>No Glazing</span>
+        </div>
+        <div class="quantity">
+          <button class="minus-btn" type="button" name="button">
+            <img src="images/minus.png" alt="Minus" />
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="add-btn" type="button" name="button">
+            <img src="images/add.png" alt="Add" />
+          </button>
+        </div>
+        <div class="price">$3.99</div>
+        <span class="delete-btn"></span>
+      </div>
+    </div>
+    </div>
+    <div class="receipt">
+      <div id="table">
+        <table>
+          <tr>
+            <td class="product-name">Original Cinnamon Roll</td>
+            <td class="product-price">$3.67</td>
+          </tr>
+          <tr>
+            <td class="product-name">Pumpkin Spice Cinnamon Roll</td>
+            <td class="product-price">$3.99</td>
+          </tr>
+          <tr>
+            <td class="receipt-title">Subtotal</td>
+            <td class="product-price">$7.66</td>
+          </tr>
+          <tr>
+            <td class="receipt-title">Tax</td>
+            <td class="product-price">0.53</td>
+          </tr>
+          <tr style="border-top:1px solid white;">
+            <td class="receipt-total">Total</td>
+            <td class="receipt-total" >8.19</td>
+          </tr>
+          <tr>
+            <td style="color:white;background-color:#53221D;">Proceed to Checkout</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Link to CSS file-->
+  <link rel="stylesheet" media="all" type="text/css" href="styles.css" />
+  <script src="main.js"></script>
+  <title>Bun Bun Bake Shop</title>
+</head>
+
+<body onload="onLoad()">
+  <!--website container-->
+  <div id="container">
+    <div id="top_row">
+      <header>
+        <a href="index.html">
+          <!--image source: https://flic.kr/p/cKbtiY -->
+          <img src="images/icon.jpg" alt="Bun Bun Bake Shop Logo" class="responsive">
+          <h1>Bun Bun Bake Shop</h1>
+        </a>
+      </header>
+
+      <!--Navigation Bar-->
+      <nav>
+        <a href="index.html" class="selected">Home</a>
+        <a href="products.html" class="select">Products</a>
+        <a class="select">About</a>
+        <a class="select">Contact</a>
+        <a id="cart-display" href="cart.html" class="select">Cart</a>
+      </nav>
+    </div>
+
+    <div id="content">
+      <div class="slideshow-container">
+        <!--image source: https://flic.kr/p/2jKQnmt-->
+        <img src="images/banner.jpg" alt="Cinnamon Buns">
+      </div>
+      <div id="order">
+        <a href="products.html" class="button">Order Now</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

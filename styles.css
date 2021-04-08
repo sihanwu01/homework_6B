@@ -1,0 +1,407 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
+    font-size: 100%;
+    line-height: 1.7em;
+    color: #53221D;
+    overflow: auto;
+    margin-bottom: 10%;
+}
+
+#top_row {
+    padding: .5em .5em 1em .5em;
+    height: 5vw;
+}
+
+#top_row header {
+    margin-bottom: 2em;
+    float: left;
+}
+
+#top_row a img{
+    float: left;
+    max-width: 7vw;
+    margin-top: 0;
+    vertical-align: middle;
+    position: relative;
+}
+
+#top_row h1 {
+    float: left;
+    color: #53221D;
+    font-size: 4vw;
+    font-weight: 100;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    margin-top: 2vw;
+    margin-left: 10px;
+}
+
+#top_row nav {
+    display: inline;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-left: 10%;
+}
+
+#top_row nav a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 400;
+    padding: 24px 33px;
+    color: #53221D;
+}
+
+.selected {
+    border-bottom: 3px solid #53221D;
+    padding-bottom: 1px;
+}
+
+.select:hover {
+    border-bottom: 3px solid #53221D;
+    padding-bottom: 1px;
+}
+
+#content {
+    position: relative;
+}
+
+.slideshow-container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    height: 450px;
+}
+
+.slideshow-container img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+#order {
+    top: 100px;
+    bottom: 0px;
+}
+
+.button {
+    border: none;
+    color: white;
+    background-color: #9F4100;
+    padding: 15px 108px;
+    text-align: center;
+    text-decoration: none;
+    display: table;
+    font-size: 26px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 25px;
+}
+
+#banner {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    height: 150px;
+    background-color: #9F4100;
+}
+
+#banner img {
+    margin: -450px 0 0 -202px;
+    filter: opacity(40%);
+}
+
+.center {
+    color: white;
+    font-size: 50px;
+    font-weight: 200;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*adapted from https://www.freecodecamp.org/news/how-to-create-an-image-gallery-with-css-grid-e0f0fd666a5c/ */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 25vw);
+    grid-row-gap: 90px;
+    grid-column-gap: 0px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+}
+
+.gallery_item {
+    text-align: center;
+}
+
+.gallery_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    color:#53221D;
+    font-weight: 400;
+    font-size: 2vw;
+}
+
+.price {
+    color: #C46523;
+    font-weight: 400;
+    font-size: 1.5vw;
+}
+
+.roll {
+    color:#53221D;
+    font-weight: 400;
+    font-size: 1.5vw; 
+}
+
+#back {
+    display: block;
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 10px;
+}
+
+/*adapted from https://www.w3schools.com/howto/howto_css_next_prev.asp */
+#back a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 40px;
+}
+  
+#back a:hover {
+    background-color: #ddd;
+    color:#53221D;
+}
+
+.previous {
+    background-color:#C46523;
+    color: white;
+}
+
+/*adapted from https://designmodo.com/create-product-page/ */
+#product-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    display: block;
+    margin-top: 20px;
+}
+
+.left-column {
+    display:block;
+    width: 60%;
+    position: relative;
+}
+
+.left-column img {
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    left: 0px;
+    top: 65px;
+}
+   
+.right-column {
+    width: 40%;
+    margin-top: 60px;
+    margin-left: 53%;
+    display: block;
+    position: relative;
+}
+
+.product-description h1 {
+    font-weight: 400;
+    font-size: 52px;
+    letter-spacing: -2px;
+    line-height: initial;
+}
+
+.product-description p {
+    font-size: 25px;
+    font-weight: 200;
+    line-height: 25px;
+    color:#C46523
+}
+
+/*adapted from https://www.w3schools.com/howto/howto_js_dropdown.asp*/
+.dropbtn {
+    background-color:#C46523;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border:none;
+    width: 159px;
+    text-align: left;
+}
+  
+.dropbtn:hover, .dropbtn:focus {
+    background-color:#C46523;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 10%;
+}
+
+.dropdown-content {
+    display:none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+#add {
+    margin-top: 40%;
+}
+
+.add {
+    margin-left:0;
+}
+
+#add h3 {
+    color: #C46523;
+    font-size: 32px;
+}
+
+.shopping-cart {
+    flex-direction: column;
+}
+   
+.item {
+    padding: 20px 10px 20px 30px;
+    height: 120px;
+    display: flex;
+    box-shadow: 4px 4px 5px 1px rgba(0,0,0,0.10);
+    width: 100%;
+    background-color: #FAEBD7;
+    margin-left: 15%;
+    margin-top: 15px;
+}
+
+.item:nth-child(3) {
+    border-top:  1px solid #E1E8EE;
+    border-bottom:  1px solid #E1E8EE;
+}
+
+.delete-btn {
+    width: 18px;
+    height: 17px;
+    background: url("./images/delete.png") no-repeat center;
+    margin-left: 12%;
+}
+
+.cart-image img {
+    object-fit: cover;
+    width: 120px;
+    height: 120px;
+    margin-right: 70px;
+}
+
+.description {
+    padding-top: 10px;
+    margin-right: 40px;
+    width: 145px;
+}
+   
+.description span {
+    display: block;
+    color: #53221D;
+}
+   
+.description span:first-child {
+    font-size: 1.5vw;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.description span:last-child {
+    font-weight: 300;
+    font-size: 1vw;
+    margin-top: 8px;
+    color: #C46523;
+}
+
+.quantity {
+    padding-top: 30px;
+    margin-right: 26px;
+    width: 144px;
+}
+
+.quantity input {
+    -webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 32px;
+    font-size: 1.5vw;
+    color: #53221D;
+    font-weight: 300;
+}
+
+.price {
+    padding-top:30px;
+}
+
+   
+button:focus,
+input:focus {
+    outline:0;
+}
+
+.column-title {
+    width: 100%;
+    margin-left: 15%;
+    padding: 20px 0px 0px 224px;
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+
+.receipt {
+    width: 15%;
+    height: 15%;
+    background-color:#C46523;
+    float:left;
+    margin-top: 64px;
+    padding:22px;
+}
+
+#table {
+    color: white;
+}
+
+#cart {
+    float:left;
+    margin-left:10%;
+    margin-right:13%;
+}

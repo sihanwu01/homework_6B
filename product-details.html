@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Link to CSS file-->
+  <link rel="stylesheet" media="all" type="text/css" href="styles.css"/>
+  <script src="main.js"></script>
+  <title>Product Details</title>
+</head>
+
+<body onload="onLoad()">
+  <!--website container-->
+  <div id="container">
+    <div id="top_row">
+      <header>
+        <a href="index.html">
+          <!--image source: https://flic.kr/p/cKbtiY -->
+          <img src="images/icon.jpg" alt="Bun Bun Bake Shop Logo" class="responsive">
+          <h1>Bun Bun Bake Shop</h1>
+        </a>
+      </header>
+      <!--Navigation Bar-->
+      <nav>
+        <a href="index.html" class="select">Home</a>
+        <a href="products.html" class = "select">Products</a>
+        <a class = "select">About</a>
+        <a class = "select">Contact</a>
+        <a id="cart-display" href="cart.html" class = "select">Cart</a>
+      </nav>
+    </div>
+    <div id="content">
+      <div id="back">
+        <a href="products.html" class="previous">&laquo;</a>
+      </div>
+      <div id="product-detail">
+        <!--adapted from https://designmodo.com/create-product-page/ -->
+        <!--Left Column-->
+        <div class="left-column">
+          <!--image source: https://flic.kr/p/aw5Rcs-->
+          <img id="details-image" src="images/image1.jpg" alt="original flavor cinnamon bun">
+        </div> 
+        <!-- Right Column -->
+        <div class="right-column">
+          <!-- Product Description -->
+          <div class="product-description">
+            <h1 id="details-title">Original Cinnamon Roll</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+          </div>
+          <!--adapted from https://www.w3schools.com/howto/howto_js_dropdown.asp -->
+          <div class="dropdown">
+            <label for="choose-glazing">
+              <h2>Glazing</h2>
+            </label>
+            <button id="glaze-dropdown" onclick="glazeOptions()" class="dropbtn">None</button>
+            <div id="choose-glazing" class="dropdown-content">
+              <a onclick="updateGlazing('Sugar-Milk')">Sugar-Milk</a>
+              <a onclick="updateGlazing('Vanilla-Milk')">Vanilla-Milk</a>
+              <a onclick="updateGlazing('Double-Chocolate')">Double-Chocolate</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <label for="choose-quantity">
+              <h2>Quantity</h2>
+            </label>
+            <button id="qty-dropdown" onclick="quantityOptions()" class="dropbtn">1</button>
+            <div id="choose-quantity" class="dropdown-content">
+              <a onclick="updateQuantity(3)">3</a>
+              <a onclick="updateQuantity(6)">6</a>
+              <a onclick="updateQuantity(12)">12</a>
+            </div>
+          </div>
+          <div id="add">
+            <h3 id="details-price">$3.67</h3>
+            <a onclick="addToCart()" class="button add">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
