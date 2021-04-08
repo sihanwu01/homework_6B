@@ -12,8 +12,16 @@ function changeDetails(image, title, price) {
     localStorage.setItem("price", price);
 }
 
-function onLoad() {
+function onLoadPage() {
+    var cart = sessionStorage.getItem( "cartQty" );
+    if (cart == null || parseInt( cart == 0)) {
+        document.getElementById("cart-display").innerHTML = "Cart";
+    } else {
+        document.getElementById("cart-display").innerHTML = "Cart("+parseInt(sessionStorage.getItem("cartQty"))+")";
+    }
+}
 
+function onLoadDetails() {
     var i = localStorage.getItem("image");
     let img = document.getElementById("details-image");
     img.setAttribute("src", i);
@@ -25,12 +33,6 @@ function onLoad() {
     var p = localStorage.getItem("price");
     let price = document.getElementById("details-price");
     price.innerHTML = p;
-
-    if (parseInt( sessionStorage.getItem( "cartQty" )) == 0) {
-        document.getElementById("cart-display").innerHTML = "Cart";
-    } else {
-        document.getElementById("cart-display").innerHTML = "Cart("+parseInt(sessionStorage.getItem("cartQty"))+")";
-    }
 }
 
 function updateGlazing(glazing) {
