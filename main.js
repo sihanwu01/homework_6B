@@ -48,8 +48,10 @@ function onLoadPage() {
     var cart = sessionStorage.getItem( "cartQty" );
     if (cart == null || parseInt(cart)==0) {
         document.getElementById("cart-display").innerHTML = "Cart";
+        document.getElementById("receipt").style = "display: none;";
     } else {
         document.getElementById("cart-display").innerHTML = "Cart("+parseInt(sessionStorage.getItem("cartQty"))+")";
+        document.getElementById("receipt").style = "display: block;";
     }
 }
 
