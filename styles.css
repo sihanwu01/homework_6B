@@ -293,15 +293,17 @@ body {
 #add h3 {
     color: #C46523;
     font-size: 32px;
+    display: inline-block;
 }
 
 .shopping-cart {
     flex-direction: column;
+    margin-bottom: 100px;
 }
    
 .item {
     padding: 20px 10px 20px 30px;
-    height: 120px;
+    height: auto;
     display: flex;
     box-shadow: 4px 4px 5px 1px rgba(0,0,0,0.10);
     width: 100%;

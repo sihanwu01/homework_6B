@@ -8,7 +8,7 @@
   <title>Shopping Cart</title>
 </head>
 
-<body onload="onLoadPage()">
+<body onload="onLoadCart()">
   <!--website container-->
   <div id="container">
     <div id="top_row">
@@ -44,51 +44,7 @@
       <a>Price</a>
     </div>
 
-    <div class="shopping-cart">
-      <!--item 1-->
-      <div class="item">
-        <div class="cart-image">
-          <!--image source: https://flic.kr/p/aw5Rcs-->
-          <img src="images/image1.jpg" alt="original flavor cinnamon bun" />
-        </div>
-        <div class="description">
-          <span>Original Cinnamon Roll</span>
-          <span>Sugar-milk Glazing</span>
-        </div>
-        <div class="quantity">
-          <button class="minus-btn" type="button" name="button">
-            <img src="images/minus.png" alt="Minus" />
-          </button>
-          <input type="text" name="name" value="1">
-          <button class="add-btn" type="button" name="button">
-            <img src="images/add.png" alt="Add" />
-          </button>
-        </div>
-        <div class="price">$3.67</div>
-        <span class="delete-btn"></span>
-      </div>
-      <!--item 2-->
-      <div class="item">
-        <div class="cart-image">
-          <!--image source: https://flic.kr/p/aw5Rcs-->
-          <img src="images/image2.jpg" alt="pumpkin spice cinnamon roll" />
-        </div>
-        <div class="description">
-          <span>Pumpkin Spice Cinnamon Roll</span>
-          <span>No Glazing</span>
-        </div>
-        <div class="quantity">
-          <button class="minus-btn" type="button" name="button">
-            <img src="images/minus.png" alt="Minus" />
-          </button>
-          <input type="text" name="name" value="1">
-          <button class="add-btn" type="button" name="button">
-            <img src="images/add.png" alt="Add" />
-          </button>
-        </div>
-        <div class="price">$3.99</div>
-        <span class="delete-btn"></span>
-      </div>
+    <div id="shopping-cart" class="shopping-cart">
     </div>
     </div>
     <div class="receipt">
