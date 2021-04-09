@@ -1,3 +1,18 @@
+//drop down menu
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+        }
+        }
+}
+}
+
+//display dropdown menu
 function glazeOptions() {
     document.getElementById("choose-glazing").classList.toggle("show");
 }
@@ -6,12 +21,29 @@ function quantityOptions() {
     document.getElementById("choose-quantity").classList.toggle("show");
 }
 
+//changing drop down selection display
+function updateGlazing(glazing) {
+    sessionStorage.setItem("glazing", glazing);
+    var o = sessionStorage.getItem("glazing");
+    let option = document.getElementById("glaze-dropdown");
+    option.innerHTML = o;
+}
+
+function updateQuantity(qty) {
+    sessionStorage.setItem("quantity", qty);
+    var q = sessionStorage.getItem("quantity");
+    let option = document.getElementById("qty-dropdown");
+    option.innerHTML = q;
+}
+
+//setting user customized product options
 function changeDetails(image, title, price) {
     localStorage.setItem("image", image);
     localStorage.setItem("title", title);
     localStorage.setItem("price", price);
 }
 
+//displaying quantity in shopping cart
 function onLoadPage() {
     var cart = sessionStorage.getItem( "cartQty" );
     if (cart == null || parseInt(cart)==0) {
@@ -21,6 +53,7 @@ function onLoadPage() {
     }
 }
 
+//changing the product details page according to each product clicked
 function onLoadDetails() {
     var i = localStorage.getItem("image");
     let img = document.getElementById("details-image");
@@ -37,20 +70,7 @@ function onLoadDetails() {
     onLoadPage();
 }
 
-function updateGlazing(glazing) {
-    sessionStorage.setItem("glazing", glazing);
-    var o = sessionStorage.getItem("glazing");
-    let option = document.getElementById("glaze-dropdown");
-    option.innerHTML = o;
-}
-
-function updateQuantity(qty) {
-    sessionStorage.setItem("quantity", qty);
-    var q = sessionStorage.getItem("quantity");
-    let option = document.getElementById("qty-dropdown");
-    option.innerHTML = q;
-}
-
+//add item to cart array
 function addToCart() {  
     var qty = 0;
     if (parseInt( sessionStorage.getItem( "cartQty" ))) {
@@ -87,6 +107,7 @@ function onLoadCart() {
     loadCart();
 }
 
+//loading shopping cart, creating new item div for each item
 function loadCart() {
     var cartString = sessionStorage.getItem("shopping-cart");
     var cartArr = JSON.parse(cartString);
@@ -175,6 +196,7 @@ function deleteItem(id) {
     onLoadPage();
 }
 
+//helper function for creating quantity adjustment buttons
 function createButton(className, image, alt) {
     var btn = document.createElement("button");
     btn.className = className;
@@ -185,17 +207,4 @@ function createButton(className, image, alt) {
     img.alt = alt;
     btn.appendChild(img);
     return btn;
-}
-  
-window.onclick = function(event) {
-if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-    var openDropdown = dropdowns[i];
-    if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-    }
-    }
-}
 }
