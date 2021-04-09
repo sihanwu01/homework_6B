@@ -14,7 +14,7 @@ function changeDetails(image, title, price) {
 
 function onLoadPage() {
     var cart = sessionStorage.getItem( "cartQty" );
-    if (cart == null || parseInt( cart == 0)) {
+    if (cart == null || parseInt(cart)==0) {
         document.getElementById("cart-display").innerHTML = "Cart";
     } else {
         document.getElementById("cart-display").innerHTML = "Cart("+parseInt(sessionStorage.getItem("cartQty"))+")";
@@ -64,7 +64,8 @@ function addToCart() {
     sessionStorage.setItem("quantity", document.getElementById("qty-dropdown").innerHTML);
     sessionStorage.setItem("glazing", document.getElementById("glaze-dropdown").innerHTML);
 
-    var item = {image: sessionStorage.getItem("image"), title: sessionStorage.getItem("title"),
+    var id = (sessionStorage.getItem("shopping-cart") == null? 0:JSON.parse(sessionStorage.getItem("shopping-cart")).length);
+    var item = {id: id, image: sessionStorage.getItem("image"), title: sessionStorage.getItem("title"),
                 price: sessionStorage.getItem("price"), glazing: sessionStorage.getItem("glazing"),
                 quantity: sessionStorage.getItem("quantity")};
     
@@ -96,6 +97,7 @@ function loadCart() {
         //create new item
         var item = document.createElement("div");
         item.className = "item";
+        item.id = "item"+i;
 
         //set image
         var imageDiv = document.createElement("div");
@@ -121,14 +123,17 @@ function loadCart() {
         //set quantity
         var qtyDiv = document.createElement("div");
         qtyDiv.className = "quantity";
-        var minus = addButton("minus-btn", "images/minus.png", "Minus");
+        //minus button
+        var minus = createButton("minus-btn", "images/minus.png", "Minus");
         qtyDiv.appendChild(minus);
+        //quantity
         var qty = document.createElement("input");
         qty.type = "text";
         qty.name = "name";
-        qty.value = cartArr[i].quantity;
+        qty.value = cartArr[i].quantity
         qtyDiv.appendChild(qty);
-        var add = addButton("add-btn", "images/add.png", "Add");
+        //add button
+        var add = createButton("add-btn", "images/add.png", "Add");
         qtyDiv.appendChild(add);
         item.appendChild(qtyDiv);
 
@@ -139,19 +144,38 @@ function loadCart() {
         sign.className = "price";
         sign.innerHTML = "$";
         priceDiv.appendChild(sign);
-        priceDiv.innerHTML = cartArr[i].quantity * cartArr[i].price;
+        priceDiv.innerHTML = cartArr[i].quantity * cartArr[i].price * 1.00;
         item.appendChild(priceDiv);
 
         //delete button;
         var deleteBtn = document.createElement("span");
         deleteBtn.className = "delete-btn";
+        deleteBtn.onclick = function() {
+            deleteItem(i-1);
+        };
         item.appendChild(deleteBtn);
 
         cart.appendChild(item);
     }
 }
 
-function addButton(className, image, alt) {
+function deleteItem(id) {
+    confirm("Are you sure you want to remove this item from your cart?");
+    var item = document.getElementById("item"+id.toString());
+    item == null? alert("null"): item.remove();
+
+    var cart = sessionStorage.getItem("shopping-cart");
+    var cartArr = JSON.parse(cart);
+    var newCart = cartArr.filter(function( obj ) {
+        return obj.id !== id;
+    });
+    sessionStorage.setItem("shopping-cart", JSON.stringify(newCart));
+    var qty = sessionStorage.getItem("cartQty");
+    sessionStorage.setItem( "cartQty", qty - 1);
+    onLoadPage();
+}
+
+function createButton(className, image, alt) {
     var btn = document.createElement("button");
     btn.className = className;
     btn.type = "button";
